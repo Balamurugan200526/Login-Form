@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:linear-gradient(to right,blue,green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 300px;
+        }
+        input[type="text"]{
+color:dark;
+}
+        h2 {
+            margin-bottom: 15px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        } 
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:blue;
+        }
+        .note {
+            color: red;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        .scroll-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            display: block;
+            font-weight: bold;
+            color: black;
+            
+        }
+        @keyframes scroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<center>
+<body>
+    <br><br>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form action="/save" method="post" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Enter Username">
+            <input type="password" id="password" name="password" placeholder="Enter Password">
+            <p class="note">Note: The data entered above is stored in an Excel file. Please check before registering.</p> 
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+<script>
+function validateForm() {
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    if (username === "") {
+        alert("Please enter a username.");
+        return false;
+    }
+    if (password === "") {
+        alert("Please enter a password.");
+        return false;
+    }
+
+    alert("Registration successful for " + username + "!");
+    return true;
+}
+</script>
+
+</body>
+</html>
