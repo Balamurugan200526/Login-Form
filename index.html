@@ -65,21 +65,21 @@
 
 <body>
 
-    <div class="container">
-        <h2>User Registration</h2>
+<div class="container">
+    <h2>User Registration</h2>
 
-        <!-- Removed action="/save" to avoid 404 -->
-        <form onsubmit="return validateForm()">
-            <input type="text" id="username" placeholder="Enter Username">
-            <input type="password" id="password" placeholder="Enter Password">
+    <!-- NO action attribute -->
+    <form onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
 
-            <p class="note">
-                Note: Data is stored locally in your browser (not Excel).
-            </p>
+        <p class="note">
+            Note: Data stored locally (demo purpose).
+        </p>
 
-            <button type="submit">Register</button>
-        </form>
-    </div>
+        <button type="submit">Register</button>
+    </form>
+</div>
 
 <script>
 function validateForm() {
@@ -96,27 +96,18 @@ function validateForm() {
         return false;
     }
 
-    // Get existing users
+    // Save locally (optional)
     let users = JSON.parse(localStorage.getItem("users")) || [];
-
-    // Check if user already exists
-    let exists = users.find(user => user.username === username);
-    if (exists) {
-        alert("Username already exists!");
-        return false;
-    }
-
-    // Save new user
     users.push({ username, password });
     localStorage.setItem("users", JSON.stringify(users));
 
+    // Show alert
     alert("Registration successful for " + username + "!");
 
-    // Clear fields
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
+    // AFTER clicking OK → refresh page
+    location.reload();
 
-    return false; // prevent reload
+    return false; // prevent default submit
 }
 </script>
 
