@@ -168,18 +168,8 @@ background: linear-gradient(to right, blue, green);
 ## 📸 Preview
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                                                     │
-│   🟦🟦🟦🟦🟦🟩🟩🟩🟩🟩  ← Blue → Green Gradient    │
-│        ┌───────────────────────────┐               │
-│        │     User Registration     │               │
-│        │  [    Username Input    ] │               │
-│        │  [    Password Input    ] │               │
-│        │  ⚠️ Note: Demo only      │               │
-│        │  [       Register      ]  │               │
-│        └───────────────────────────┘               │
-│                                                     │
-└─────────────────────────────────────────────────────┘
+<img width="1878" height="903" alt="image" src="https://github.com/user-attachments/assets/f99c51a1-5f1e-4679-b297-4abbb2f52222" />
+
 ```
 
 ---
